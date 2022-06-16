@@ -1,7 +1,14 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function Feeling( props ){
+
+    const history = useHistory();
     const [ hook, setHook ] = useState( null )
+
+    const next = ()=>{
+        history.push( '/understanding');
+      }
     return (
         <div>
             <h2>How are you feeling today?(1-5)</h2>
@@ -11,7 +18,7 @@ function Feeling( props ){
                 <option>3</option>
                 <option>4</option>
                 <option>5</option>
-                </select> <button>NEXT</button>
+                </select> <button onClick={next}>NEXT</button>
         </div>
     );
 }

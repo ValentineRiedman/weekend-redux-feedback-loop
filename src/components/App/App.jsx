@@ -1,8 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import { Route, HashRouter } from 'react-router-dom';
 
-import Feeling from './Feeling/Feeling';
+import Home from '../Home/Home';
+import Feeling from '../Feeling/Feeling';
+import Understanding from '../Understanding/Understanding';
 
 function App() {
 
@@ -12,9 +15,18 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      <div>
-        <Feeling />
-      </div>
+
+      <HashRouter>
+        <Route path="/" exact>
+          <Home/>
+        </Route>
+        <Route path="/feeling">
+          <Feeling/>
+        </Route>
+        <Route path="/understanding">
+          <Understanding/>
+        </Route>
+      </HashRouter>
     </div>
   );
 }
