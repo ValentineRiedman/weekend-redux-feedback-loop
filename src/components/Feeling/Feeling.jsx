@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import{useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
 
-function Feeling( props ){
+function Feeling( ){
     const dispatch = useDispatch();
     const history = useHistory();
-    const [ feeling, setFeeling ] = useState( '' )
+    const [ feeling, setFeeling ] = useState( null );
 
     const changeFeeling = (event)=>{
         console.log(feeling);
@@ -13,13 +13,18 @@ function Feeling( props ){
     }
 
     const addFeeling = ()=>{
-        dispatch({ type:'SEND_FEELING', payload: feeling})
-        history.push( '/understanding');
+        if( feeling === null){
+            alert('Pick a number between 1 and 5');
+        }
+        
+        else if (dispatch({ type:'SEND_FEELING', payload: feeling}))
+                history.push( '/understanding');
       }
     return (
         <div>
             <h2>How are you feeling today?(1-5)</h2>
             <select onChange={changeFeeling}>
+                <option>0</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>

@@ -6,6 +6,8 @@ import { Route, HashRouter } from 'react-router-dom';
 import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
+import Comments from '../Comments/Comments';
 
 function App() {
 
@@ -25,6 +27,12 @@ function App() {
         </Route>
         <Route path="/understanding">
           <Understanding/>
+        </Route>
+        <Route path="/support">
+          <Support/>
+        </Route>
+        <Route path="/comments">
+          <Comments/>
         </Route>
       </HashRouter>
     </div>
