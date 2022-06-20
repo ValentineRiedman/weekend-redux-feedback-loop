@@ -18,11 +18,8 @@ function Comments( ){
     }
 
     const addComments = ()=>{
-        if( comments === null ){
-            alert('Pick a number between 1 and 5');
-        }
-        else if( dispatch({ type: 'SEND_COMMENTS', payload: comments}))
-                history.push( '/comments' );
+      ( dispatch({ type: 'SEND_COMMENTS', payload: comments}))
+                history.push( '/review' );
     }
     return (
         <div>

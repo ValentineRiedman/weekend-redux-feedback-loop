@@ -8,6 +8,8 @@ import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
+import Review from '../Review/Review';
+import Complete from '../Complete/Complete';
 
 function App() {
 
@@ -33,6 +35,12 @@ function App() {
         </Route>
         <Route path="/comments">
           <Comments/>
+        </Route>
+        <Route path="/review">
+          <Review/>
+        </Route>
+        <Route path="/complete">
+          <Complete/>
         </Route>
       </HashRouter>
     </div>

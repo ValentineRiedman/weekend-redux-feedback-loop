@@ -11,6 +11,9 @@ const sendFeeling = ( state= null, action )=>{
     if ( action.type === 'SEND_FEELING'){
         state = action.payload;           
     }
+    else if( action.type === 'CLEAR_FORM'){
+        state = '';
+    }
     return state;
 }
 
@@ -18,6 +21,9 @@ const sendUnderstanding = ( state = null , action )=>{
     console.log( 'in sendUnderstanding:', action );
     if ( action.type === 'SEND_UNDERSTANDING'){
         state = action.payload;
+    }
+    else if ( action.type === 'CLEAR_FORM'){
+        state = '';
     }
     return state;
 }
@@ -27,6 +33,8 @@ const sendSupport =( state = null, action )=>{
     if ( action.type === 'SEND_SUPPORT'){
         state = action.payload;
     }
+    else if ( action.type === 'CLEAR_FORM')
+        state = '';
     return state;
 }
 
@@ -35,6 +43,8 @@ const sendComments =( state = '', action)=>{
     if ( action.type === 'SEND_COMMENTS'){
         state = action.payload;
     }
+    else if( action.type === 'CLEAR_FORM')
+        state = ' ';
     return state;
 }
 
