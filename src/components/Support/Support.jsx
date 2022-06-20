@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import{useDispatch, useSelector} from 'react-redux';
+import{ useDispatch } from 'react-redux';
 
 function Support( ){
     const [ support, setSupport ] = useState( null );
     const dispatch = useDispatch();
     const history = useHistory();
-    const sendFeeling = useSelector( store => store.sendFeeling );
-    const sendUnderstanding = useSelector( store => store.sendUnderstanding );
-    const sendSupport = useSelector( store => store.sendSupport );
+    
 
     const changeSupport = (event)=>{
         setSupport(event.target.value);
@@ -24,10 +22,7 @@ function Support( ){
     }
     return (
         <div>
-            <div>
-            <p>{sendFeeling}</p>
-            <p>{sendUnderstanding}</p>
-            <p>{sendSupport}</p>    
+            <div> 
             <h2>How well are you being supported?(1-5)</h2>
             <select onChange={changeSupport}>
                 <option>0</option>

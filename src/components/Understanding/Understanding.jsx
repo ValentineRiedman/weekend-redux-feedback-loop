@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import{useDispatch, useSelector} from 'react-redux';
+import{ useDispatch } from 'react-redux';
 
 function Understanding( ){
     const [ understanding, setUnderstanding ] = useState( null );
     const dispatch = useDispatch();
     const history = useHistory();
-    const sendFeeling = useSelector( store => store.sendFeeling );
-    const sendUnderstanding = useSelector( store => store.sendUnderstanding );
+    
 
     const changeUnderstanding = (event)=>{
         setUnderstanding(event.target.value);
@@ -23,9 +22,7 @@ function Understanding( ){
     }
     return (
         <div>
-            <div>
-            <p>{sendFeeling}</p>
-            <p>{sendUnderstanding}</p>    
+            <div>  
             <h2>How well are you understanding the content?(1-5)</h2>
             <select onChange={changeUnderstanding}>
                 <option>0</option>
